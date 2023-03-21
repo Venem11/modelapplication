@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import datetime
+from django.core.mail import send_mail
+
 
 def index(request):
-    now = datetime.datetime.now()
-    html = "<html><body>It is now %s.</body></html>" % now
-    return HttpResponse(html)
+    return render(request, "test.html")
