@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home',
+    'home', #Adds the home application to the website
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['home\Assets\Templates'],
+        'DIRS': ['home\Assets\Templates'], #Adds the folder I've made to the template directory
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,9 +105,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-uk'
+LANGUAGE_CODE = 'en-uk' #language english UK
 
-TIME_ZONE = 'GMT'
+TIME_ZONE = 'GMT' #timezone
 
 USE_I18N = True
 
@@ -123,4 +123,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = "home.CustomUser"
+AUTH_USER_MODEL = "home.CustomUser" #User model is the one declared in the home application

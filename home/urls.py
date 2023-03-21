@@ -16,5 +16,5 @@ Including another URLconf
 from django.urls import path
 from . import views
 urlpatterns = [
-    path('', views.index)
+    path('', views.index) #declares the index function in the views file 
 ]
