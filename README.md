@@ -1,2 +1,1 @@
-# modelapplication
-application for model applications and for events 
+# ApplyToModel - Descriptions, current functionality, and changelog 
