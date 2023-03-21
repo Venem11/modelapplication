@@ -19,3 +19,5 @@ This portion has not been started yet, please refer to changelog for updates on 
 ### 21/03/2023
 
 Initialised the django project, and done hand drawings of designs for the website, and started a bootstrap file to create the templates ready for the website to streamline deployment 
+
+Applied some admin functions that require a real name and date of birth, and changed the sign up form on the admin side 
