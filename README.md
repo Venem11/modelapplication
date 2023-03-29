@@ -29,3 +29,5 @@ I have started to create the photo's field, one will be required upon sign up
 ### 29/03/2023
 
 Created function in models (implimented in views) to create an object using a function, this will be initialised in the website quite alot
+
+Added HTML for the Admin Views (only the dashboard) just so that admins can see the applications easier without having to trapse into the django admin views (so then django admin views are maintenance only)

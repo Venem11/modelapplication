@@ -11,7 +11,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin): #THIS is the model that is
     RealName = models.CharField(max_length= 50)
     PornName = models.CharField(max_length= 50)
     DateofBirth = models.DateField(default= timezone.now)
-    profileImage = models.ImageField(upload_to='profilePic')#This stores 1 picture of the user
+    profileImage = models.ImageField(upload_to='profilePic', default='image.jpg')#This stores 1 picture of the user
     is_staff = models.BooleanField(default=False) #This grants differant permissions if this is ticked
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
@@ -27,17 +27,18 @@ class CustomUser(AbstractBaseUser, PermissionsMixin): #THIS is the model that is
 
 #ALL FUNCTIONS BELOW ARE SUBJECT TO CHANGE AS THESE ARE THE APPLICATION QUESTIONS
 class ApplicationManager(models.Manager):
-    def createApplicationQuestion(self, user, question, answer):
-        applicationquestion = self.create(user=user, question= question, answer=answer)
+    def createApplicationQuestion(self, user, question1ans, question2ans):
+        applicationquestion = self.create(user=user, question1ans= question1ans, question2ans=question2ans)
         return applicationquestion
     
-class ApplicationQuestionText(models.Model):
+class Applications(models.Model):
     user = models.ForeignKey(CustomUser, on_delete= models.CASCADE, default= 0)
-    question = models.CharField(max_length= 40)
-    answer = models.CharField(max_length= 200)
-
+    question1ans = models.CharField(max_length= 40)
+    question2ans = models.CharField(max_length= 200)
+    read = models.BooleanField(default= False)
+    complete = models.BooleanField(default= False)
     objects = ApplicationManager()
-class ApplicationQuestionTrueOrFalse(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete= models.CASCADE, default= 0)
-    question = models.CharField(max_length= 40)
-    answer = models.BooleanField(default= False)
+
+    def __str__(self):
+        return self.user.RealName + "'s Application"
+

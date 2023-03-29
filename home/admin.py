@@ -29,5 +29,4 @@ class CustomUserAdmin(UserAdmin):
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
-admin.site.register(ApplicationQuestionText)
-admin.site.register(ApplicationQuestionTrueOrFalse)
+admin.site.register(Applications)
