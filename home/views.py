@@ -15,13 +15,13 @@ def adminview(request):
         applicationinprogcount= 0
         completedapplications = 0
         unreadapplications = 0
-        userlist = CustomUser.objects.all()
+        userlist = CustomUser.objects.filter(is_staff = False)
         applicationlist = Applications.objects.all()
         applicationinprogcount = applicationlist.filter(complete = False).__len__()
         applicationinprogcount = str(applicationinprogcount)
         completedapplications = applicationlist.filter(complete = True).__len__()
         completedapplications = str(completedapplications)
-        unreadapplications = applicationlist.filter(read = False).__len__()
+        unreadapplications = applicationlist.filter(read = False, complete = True).__len__()
         unreadapplications = str(unreadapplications)
         usercount = userlist.__len__()
         usercount = str(usercount)
