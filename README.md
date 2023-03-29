@@ -25,3 +25,7 @@ Applied some admin functions that require a real name and date of birth, and cha
 Added in comments all over the code to remind myself what lines of code do 
 
 I have started to create the photo's field, one will be required upon sign up
+
+### 29/03/2023
+
+Created function in models (implimented in views) to create an object using a function, this will be initialised in the website quite alot
