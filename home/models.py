@@ -26,10 +26,17 @@ class CustomUser(AbstractBaseUser, PermissionsMixin): #THIS is the model that is
     
 
 #ALL FUNCTIONS BELOW ARE SUBJECT TO CHANGE AS THESE ARE THE APPLICATION QUESTIONS
+class ApplicationManager(models.Manager):
+    def createApplicationQuestion(self, user, question, answer):
+        applicationquestion = self.create(user=user, question= question, answer=answer)
+        return applicationquestion
+    
 class ApplicationQuestionText(models.Model):
     user = models.ForeignKey(CustomUser, on_delete= models.CASCADE, default= 0)
     question = models.CharField(max_length= 40)
     answer = models.CharField(max_length= 200)
+
+    objects = ApplicationManager()
 class ApplicationQuestionTrueOrFalse(models.Model):
     user = models.ForeignKey(CustomUser, on_delete= models.CASCADE, default= 0)
     question = models.CharField(max_length= 40)
