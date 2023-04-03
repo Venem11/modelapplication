@@ -31,3 +31,9 @@ I have started to create the photo's field, one will be required upon sign up
 Created function in models (implimented in views) to create an object using a function, this will be initialised in the website quite alot
 
 Added HTML for the Admin Views (only the dashboard) just so that admins can see the applications easier without having to trapse into the django admin views (so then django admin views are maintenance only)
+
+### 03/04/2023
+
+Edited User model to ensure that the bio is able to be edited at the user's will edit 
+
+Added the event model, without the venue and the hotel fields (these will be added once the models have been made)

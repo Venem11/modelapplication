@@ -11,8 +11,9 @@ class CustomUser(AbstractBaseUser, PermissionsMixin): #THIS is the model that is
     RealName = models.CharField(max_length= 50)
     PornName = models.CharField(max_length= 50)
     DateofBirth = models.DateField(default= timezone.now)
-    profileImage = models.ImageField(upload_to='profilePic', default='image.jpg')#This stores 1 picture of the user
+    profileImage = models.ImageField(upload_to='profilePic', default='ApplyToModelLogo.png')#This stores 1 picture of the user
     is_staff = models.BooleanField(default=False) #This grants differant permissions if this is ticked
+    bio = models.CharField(max_length= 1000, default= 'Please type your bio here')
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
 
@@ -24,6 +25,12 @@ class CustomUser(AbstractBaseUser, PermissionsMixin): #THIS is the model that is
     def __str__(self):
         return self.email #if users are referanced outside of this function then the email field is going to be what identifies it 
     
+
+class Event(models.Model):
+    EventName = models.CharField(max_length= 30, default= 'Please enter a title for your event')
+    EventDetails = models.CharField(max_length= 600, default= 'Please enter a description for your event')
+    EventStartDate = models.DateTimeField(default= timezone.now)
+    EventEndDate = models.DateTimeField(default= timezone.now)
 
 #ALL FUNCTIONS BELOW ARE SUBJECT TO CHANGE AS THESE ARE THE APPLICATION QUESTIONS
 class ApplicationManager(models.Manager):

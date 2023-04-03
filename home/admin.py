@@ -12,7 +12,7 @@ class CustomUserAdmin(UserAdmin):
     list_display = ("RealName","PornName","email", "is_staff",)
     list_filter = ("RealName","email", "is_staff",)
     fieldsets = (
-        (None, {"fields": ("RealName","PornName","DateofBirth","email", "password", "profileImage")}),
+        (None, {"fields": ("RealName","PornName","DateofBirth","email", "password", "profileImage","bio")}),
         ("Permissions", {"fields": ("is_staff", "is_active", "groups", "user_permissions")}),
     )
     add_fieldsets = (
@@ -30,3 +30,4 @@ class CustomUserAdmin(UserAdmin):
 
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Applications)
+admin.site.register(Event)
